@@ -1,6 +1,6 @@
 # Efficient-Classification-of-Electronic-Waste-using-Deep-Learning
 
-# Efficient Classification of Electronic Waste using Deep Learning
+
 
 This project utilizes deep learning techniques to classify electronic waste (e-waste) from mixed waste images. The system identifies e-waste items using a camera feed and displays the classification results via a web interface.
 
