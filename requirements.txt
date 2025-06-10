@@ -1,3 +1,4 @@
+create the env file then install all this...
 flask
 tensorflow
 keras
