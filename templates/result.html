@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Result</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='download1.jpeg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        img {
+            margin: 20px;
+            max-width: 500px;
+            height: auto;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            color:black;
+            margin-top: 20px;
+        }
+        a {
+            color: red;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Classification Result</h1>
+    <h2>Uploaded Images:</h2>
+    {% for uploaded_image in uploaded_images %}
+        <img src="{{ url_for('serve_file', filename=uploaded_image) }}" alt="Uploaded Image">
+    {% endfor %}
+
+    <h2>Result Images:</h2>
+    {% for result_image in result_images %}
+        <img src="{{ url_for('serve_file', filename=result_image) }}" alt="Result Image">
+    {% endfor %}
+
+    <h3>Classification Summary:</h3>
+    <p>E-Waste: {{ e_waste_count }} images</p>
+    <p>Non-E-Waste: {{ non_e_waste_count }} images</p>
+    
+    <a href="/">Upload Another Image</a>
+</body>
+</html>

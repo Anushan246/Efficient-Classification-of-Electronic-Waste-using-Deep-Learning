@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category }} Images</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='download1.jpeg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+       h1, h3 {
+            color: black;
+            margin-top: 20px;
+              text-align: center;
+        }
+        div {
+            margin: 10px auto;
+            text-align: center;
+            padding: 10px;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            margin: 10px auto;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+        a {
+            color: red;
+            font-size: 18px;
+            text-decoration: none;
+            margin-top: 30px;
+            display: inline-block;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                color:black;
+                font-size: 20px;
+            }
+            img {
+                max-width: 100%;
+            }
+            a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ category }} Images</h1>
+    {% for original_image, result_image in images %}
+        <div>
+            <h3>Uploaded Image</h3>
+            <img src="{{ url_for('serve_file', folder=folder, filename=original_image) }}" alt="Uploaded Image">
+        </div>
+    {% endfor %}
+    <h3>Total {{ category }} Images: {{ total_count }}</h3>
+    <a href="/">Back to Upload</a>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    {% for original, result in images %}
+        <h3>Uploaded Image</h3>
+        <img src="{{ url_for('serve_file', filename=original.split('uploads/')[1]) }}" width="300">
+        <h3>Result Image</h3>
+        <img src="{{ url_for('serve_file', filename=result.split('uploads/')[1]) }}" width="300">
+        <hr>
+    {% endfor %}
+</body>
+</html>

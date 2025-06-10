@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Successful</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='download2.jpeg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #0047AB;
+            margin-top: 50px;
+        }
+        a {
+            display: block;
+            margin: 20px;
+            color: red;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Successful</h1>
+    <a href="/e_waste">View E-Waste Images</a>
+    <a href="/non_e_waste">View Non E-Waste Images</a>
+</body>
+</html>
+

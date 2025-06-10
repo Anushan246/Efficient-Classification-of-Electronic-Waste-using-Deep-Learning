@@ -1,0 +1,14 @@
+flask
+tensorflow
+keras
+numpy
+pillow
+opencv-python-headless
+pip install matplotlib
+pip install pillow
+pip install keras
+pip install numpy
+pip install flask
+pip install opencv-python-headless
+pip install pickle-mixin
+pip install tensorflow
